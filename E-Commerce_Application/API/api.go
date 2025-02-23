@@ -15,6 +15,8 @@ import (
 
 var secretKey = []byte("mysecretkey")
 var lc *UserService.LoginCred
+var ud *UserService.UserDetails
+var brokers = []string{"localhost:9092"}
 
 func StartServer() {
 	router := gin.Default()
@@ -53,6 +55,11 @@ func userlogin(b *gin.Context) {
 				return
 			}
 			//UserService.StoreVault(token, k)
+			_, err1 := Database.GetUserByUserDeatils(Database.DbPool, k.UserName)
+			if err1 != nil {
+				b.JSON(http.StatusBadGateway, err1)
+				return
+			}
 			b.JSON(http.StatusOK, gin.H{"token": token})
 		}
 	}
