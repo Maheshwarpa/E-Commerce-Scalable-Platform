@@ -27,7 +27,19 @@ type CompleteOrder struct {
 	OrderDate   string `json:"orderdate"`
 }
 
+type OrderResponse struct {
+	OrderId     string `json:"order_id"`
+	PlacedOrder Order  `json:"placedorder"`
+	OrderDate   string `json:"orderdate"`
+}
+
+type FinalOrder struct {
+	OrderId     string
+	OrderStatus string
+}
+
 var FullOrderList []CompleteOrder
+var FinalOrderList []FinalOrder
 
 func CreateOrder(Ord Order) *CompleteOrder {
 	var oid string
@@ -85,14 +97,14 @@ func AddOrderToList(Ord Order) error {
 	}
 }
 
-func CalculateTotal(ordl *[]Order) (float64, error) {
+func CalculateTotal(ordl *CompleteOrder) (float64, error) {
 	Total := 0.0
-	for _, k := range *ordl {
-		val, err := Database.GetProdPrice(Database.DbPool, k.Product_Id)
-		if err != nil {
-			return Total, fmt.Errorf("Unable to fetch the price", err)
-		}
-		Total += (float64(k.Count) * val)
+
+	val, err := Database.GetProdPrice(Database.DbPool, ordl.PlacedOrder.Product_Id)
+	if err != nil {
+		return Total, fmt.Errorf("Unable to fetch the price", err)
 	}
+	Total += (float64(ordl.PlacedOrder.Count) * val)
+
 	return Total, nil
 }

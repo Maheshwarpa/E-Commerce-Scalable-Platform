@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	ps "module/ProductService"
+	"module/UserService"
 	"os"
 
 	pgxpool "github.com/jackc/pgx/v5/pgxpool"
@@ -17,6 +18,8 @@ var (
 	DbPool *pgxpool.Pool
 	logger = logrus.New()
 )
+
+var SampleData *UserService.UserDetails
 
 func init() {
 	logger.SetFormatter(&logrus.JSONFormatter{}) // Logs in JSON format for ELK
@@ -53,7 +56,8 @@ func CreateUserTable(Dbpool *pgxpool.Pool) {
     cust_name VARCHAR(255) NOT NULL,
     cust_email VARCHAR(255) UNIQUE NOT NULL,
     cust_pnum VARCHAR(15) NOT NULL,
-	cust_bal FLOAT DEFAULT 0.0
+	cust_bal FLOAT DEFAULT 0.0,
+	cust_uname VARCHAR(255) NOT NULL
 );
 	`
 	var err error
@@ -87,6 +91,25 @@ func CreateProductTable(Dbpool *pgxpool.Pool) {
 	fmt.Println("Product Table ✅")
 }
 
+// Load User data in the user table
+
+func LoadUserData(Dbpool *pgxpool.Pool, user UserService.UserDetails) error {
+	insertQuery := `
+		INSERT INTO userdb (cust_id, cust_name, cust_email, cust_pnum, cust_bal, cust_uname)
+		VALUES ($1, $2, $3, $4, $5, $6)
+		ON CONFLICT (cust_id) DO NOTHING;
+	`
+	_, err := Dbpool.Exec(context.Background(), insertQuery, user.Cust_Id, user.Cust_Name, user.Cust_Email, user.Cust_PNum, user.Cust_Bal, user.UserName)
+	if err != nil {
+		log.Printf("Failed to insert user %s: %v\n", user.Cust_Id, err)
+		return err
+	} else {
+		fmt.Printf("Successfully inserted product %s\n", user.Cust_Id)
+		return nil
+	}
+
+}
+
 // Load all the products in the Product Table
 
 func LoadProdData(Dbpool *pgxpool.Pool) {
@@ -109,6 +132,41 @@ func LoadProdData(Dbpool *pgxpool.Pool) {
 	}
 	fmt.Println("Successfully Loaded")
 
+}
+
+func UpdateUserBalance(Dbpool *pgxpool.Pool, str int, newbal float64) error {
+	updateQuery := `UPDATE userdb SET cust_bal=$1 WHERE cust_id=$2`
+	_, err := Dbpool.Exec(context.Background(), updateQuery, newbal, str)
+	if err != nil {
+		log.Printf("Failed to update balance for user %s: %v\n", str, err)
+		return err
+	}
+	return nil
+}
+
+func GetUserByUserDeatils(Dbpool *pgxpool.Pool, str string) (UserService.UserDetails, error) {
+	selectQuery := `SELECT * from userdb where cust_uname=$1`
+	var p UserService.UserDetails
+	rows, err := Dbpool.Query(context.Background(), selectQuery, str)
+	if err != nil {
+		log.Printf("Failed to fetch product from GetALLProdData function %v\n", err)
+		return p, err
+	}
+
+	defer rows.Close()
+
+	//var pad []ps.Product
+
+	for rows.Next() {
+		err := rows.Scan(&p.Cust_Id, &p.Cust_Name, &p.Cust_Email, &p.Cust_PNum, &p.Cust_Bal, &p.UserName)
+		if err != nil {
+			log.Printf("Error in fetching userdetails: %v", err)
+			//c.JSON(http.StatusInternalServerError, gin.H{"error": "Error scanning product"})
+			return p, err
+		}
+	}
+	SampleData = &p
+	return p, nil
 }
 
 func GetAllProdData(Dbpool *pgxpool.Pool) ([]ps.Product, error) {

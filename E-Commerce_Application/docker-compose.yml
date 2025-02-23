@@ -29,7 +29,7 @@ services:
       # mykeyspace
       #cqlsh
       #CREATE KEYSPACE IF NOT EXISTS mykeyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
-
+  
 
   kafka:
     image: bitnami/kafka:latest
