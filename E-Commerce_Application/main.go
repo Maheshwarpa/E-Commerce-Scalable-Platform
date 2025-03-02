@@ -8,7 +8,7 @@ import (
 	"module/Database"
 	"module/UserService"
 
-	//ns "module/NotificationService"
+	ns "module/NotificationService"
 	"module/ProductService"
 	"time"
 
@@ -23,13 +23,14 @@ func init() {
 	if err != nil {
 		log.Fatalf("Database connection failed: %v", err)
 	}
-
+	Database.DbPool = dbpool
 	// Call table creation function once the DB connection is established
 	Database.CreateProductTable(dbpool)
 	time.Sleep(3 * time.Second)
 	ProductService.LoadProducts()
 	Database.LoadProdData(dbpool)
 	Database.CreateUserTable(dbpool)
+	Database.CreateLoginTable(dbpool)
 
 	Cassandra.ConnectCDB()
 	Cassandra.CreateOrderTable(Cassandra.Session)
@@ -37,6 +38,7 @@ func init() {
 
 func main() {
 	fmt.Println("Hello World")
+	ns.SendSuccessEmail()
 	var opt int
 	fmt.Println("Welcome to SKHT E-Commerce Site\nPlease login,\to get into our wonderful shopping experience")
 	for {

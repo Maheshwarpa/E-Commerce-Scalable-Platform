@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package OrderService;
+option go_package = "OrderService/orders";
+
+service OrderServices {
+    rpc ValidateOrder (OrderReq) returns (CompleteO);
+    rpc OrderCreatedEvent(CompleteO) returns (OrderR);
+    rpc PaymentProcessedEvent(OrderR) returns (OrderR);
+}
+
+
+message OrderReq {
+    string Product_Id = 1;
+    int32 Count = 2;
+}
+
+message CompleteO{
+    string OrderId = 1;
+    OrderReq PlacedOrder = 2;
+    string OrderDate = 3;
+}
+
+message OrderR{
+    string OrderId = 1;
+    OrderReq PlacedOrder = 2;
+    string OrderDate = 3;
+}

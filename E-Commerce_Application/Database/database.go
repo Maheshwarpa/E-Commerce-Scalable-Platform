@@ -52,7 +52,7 @@ func ConnectDB() (*pgxpool.Pool, error) {
 func CreateUserTable(Dbpool *pgxpool.Pool) {
 	createTableQuery := `
 	CREATE TABLE IF NOT EXISTS userdb (
-    cust_id SERIAL PRIMARY KEY,
+    cust_id INT PRIMARY KEY,
     cust_name VARCHAR(255) NOT NULL,
     cust_email VARCHAR(255) UNIQUE NOT NULL,
     cust_pnum VARCHAR(15) NOT NULL,
@@ -67,6 +67,88 @@ func CreateUserTable(Dbpool *pgxpool.Pool) {
 	}
 
 	fmt.Println("User Table ✅")
+}
+
+func CreateLoginTable(Dbpool *pgxpool.Pool) {
+	createLoginTableQuery := `
+	CREATE TABLE IF NOT EXISTS logincredentials (
+	   	
+	    username VARCHAR(255) NOT NULL,
+	    password TEXT NOT NULL
+	);
+	`
+	var err error
+	_, err = Dbpool.Exec(context.Background(), createLoginTableQuery)
+	if err != nil {
+		log.Fatalf("Failed to create logincredentials table: %v\n", err)
+	}
+	fmt.Println("LoginCRedential ✅")
+}
+
+func CheckLoginCredentials(Dbpool *pgxpool.Pool, uname string) error {
+	checkQuery := `SELECT COUNT(*) FROM logincredentials WHERE username = $1;`
+	var count int
+	err := Dbpool.QueryRow(context.Background(), checkQuery, uname).Scan(&count)
+	if err != nil {
+		return fmt.Errorf("failed to check username existence: %v", err)
+	}
+
+	if count > 0 {
+		return fmt.Errorf("username already exists")
+	} else {
+		return nil
+	}
+
+}
+
+func LoadLoginCred(Dbpool *pgxpool.Pool, lc UserService.LoginCred) error {
+	insertQuery := `INSERT INTO logincredentials (username, password) VALUES ($1, $2);`
+	var err error
+	_, err = Dbpool.Exec(context.Background(), insertQuery, lc.UserName, lc.Password)
+	if err != nil {
+		return fmt.Errorf("failed to insert user: %v", err)
+	}
+
+	fmt.Println("User inserted successfully ✅")
+	return nil
+}
+
+func GetAllLoginCred(Dbpool *pgxpool.Pool) ([]UserService.LoginCred, error) {
+	selectQuery := `SELECT * from logincredentials`
+
+	rows, err := Dbpool.Query(context.Background(), selectQuery)
+	if err != nil {
+		log.Printf("Failed to fetch product from GetALLProdData function %v\n", err)
+		return nil, err
+	}
+
+	defer rows.Close()
+
+	var pad []UserService.LoginCred
+	for rows.Next() {
+		var p UserService.LoginCred
+		err := rows.Scan(&p.UserName, &p.Password)
+		if err != nil {
+			log.Printf("Error scanning login cred: %v", err)
+			//c.JSON(http.StatusInternalServerError, gin.H{"error": "Error scanning product"})
+			return nil, err
+		}
+		pad = append(pad, p)
+	}
+
+	return pad, nil
+}
+
+func CheckValidProduct(Dbpool *pgxpool.Pool, pid string) error {
+	query := `select product_id from product where product_id= $1`
+
+	var err error
+	_, err = Dbpool.Exec(context.Background(), query, pid)
+	if err != nil {
+		log.Fatalf("Failed to extract product from the table: %v\n", err)
+		return err
+	}
+	return nil
 }
 
 func CreateProductTable(Dbpool *pgxpool.Pool) {
@@ -97,16 +179,42 @@ func LoadUserData(Dbpool *pgxpool.Pool, user UserService.UserDetails) error {
 	insertQuery := `
 		INSERT INTO userdb (cust_id, cust_name, cust_email, cust_pnum, cust_bal, cust_uname)
 		VALUES ($1, $2, $3, $4, $5, $6)
-		ON CONFLICT (cust_id) DO NOTHING;
 	`
 	_, err := Dbpool.Exec(context.Background(), insertQuery, user.Cust_Id, user.Cust_Name, user.Cust_Email, user.Cust_PNum, user.Cust_Bal, user.UserName)
 	if err != nil {
 		log.Printf("Failed to insert user %s: %v\n", user.Cust_Id, err)
 		return err
 	} else {
-		fmt.Printf("Successfully inserted product %s\n", user.Cust_Id)
+		fmt.Printf("Successfully inserted product %d \n", user.Cust_Name)
 		return nil
 	}
+
+}
+
+func GetALLUserData(Dbpool *pgxpool.Pool) ([]UserService.UserDetails, error) {
+	selectQuery := `SELECT * from userdb`
+
+	rows, err := Dbpool.Query(context.Background(), selectQuery)
+	if err != nil {
+		log.Printf("Failed to fetch product from GetALLProdData function %v\n", err)
+		return nil, err
+	}
+
+	defer rows.Close()
+
+	var pad []UserService.UserDetails
+	for rows.Next() {
+		var p UserService.UserDetails
+		err := rows.Scan(&p.Cust_Id, &p.Cust_Name, &p.Cust_Email, &p.Cust_PNum, &p.Cust_Bal, &p.UserName)
+		if err != nil {
+			log.Printf("Error scanning product: %v", err)
+			//c.JSON(http.StatusInternalServerError, gin.H{"error": "Error scanning product"})
+			return nil, err
+		}
+		pad = append(pad, p)
+	}
+
+	return pad, nil
 
 }
 
@@ -166,6 +274,7 @@ func GetUserByUserDeatils(Dbpool *pgxpool.Pool, str string) (UserService.UserDet
 		}
 	}
 	SampleData = &p
+	fmt.Println(*SampleData)
 	return p, nil
 }
 

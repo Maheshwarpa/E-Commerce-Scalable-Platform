@@ -12,6 +12,7 @@ import (
 )
 
 func SendSuccessEmail() {
+
 	from := "challengingperson97@gmail.com"
 	password := os.Getenv("EMAIL_PASSWORD")
 	to := []string{"challengingperon97@example.com"}
@@ -27,15 +28,16 @@ func SendSuccessEmail() {
 		orderNumber, customerName, orderNumber, orderDate))
 	auth := smtp.PlainAuth("", from, password, smtpHost)
 
-	err := smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, message)
-	if err != nil {
-		log.Fatal(err)
+	err1 := smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, message)
+	if err1 != nil {
+		log.Fatal(err1)
 	}
 
-	log.Println("✅ Email sent successfully!")
+	log.Println("✅ Success Email sent successfully!")
 }
 
 func SendFailEmail() {
+
 	from := "challengingperson97@gmail.com"
 	password := os.Getenv("EMAIL_PASSWORD")
 	to := []string{"challengingperon97@example.com"}
@@ -54,18 +56,19 @@ func SendFailEmail() {
 
 	auth := smtp.PlainAuth("", from, password, smtpHost)
 
-	err := smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, message)
-	if err != nil {
-		log.Fatal(err)
+	err1 := smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, message)
+	if err1 != nil {
+		log.Fatal(err1)
 	}
 
-	log.Println("✅ Email sent successfully!")
+	log.Println("✅ Fail Email sent successfully!")
 }
 
 func SendOrderConfirmationEmail(od OrderService.OrderResponse, ud *UserService.UserDetails) error {
+	fmt.Println(ud.Cust_Email)
 	from := "challengingperson97@gmail.com"
 	password := os.Getenv("EMAIL_PASSWORD")
-	to := []string{ud.Cust_Email}
+	to := []string{"challengingperon97@example.com"}
 
 	smtpHost := "smtp.gmail.com"
 	smtpPort := "587"
@@ -101,9 +104,10 @@ func SendOrderConfirmationEmail(od OrderService.OrderResponse, ud *UserService.U
 }
 
 func SendInsufficientMail(od OrderService.OrderResponse, ud *UserService.UserDetails) error {
+	fmt.Println(ud.Cust_Email)
 	from := "challengingperson97@gmail.com"
 	password := os.Getenv("EMAIL_PASSWORD")
-	to := []string{ud.Cust_Email}
+	to := []string{"challengingperson97@gmail.com"}
 
 	smtpHost := "smtp.gmail.com"
 	smtpPort := "587"
@@ -125,14 +129,15 @@ func SendInsufficientMail(od OrderService.OrderResponse, ud *UserService.UserDet
 		return err
 	}
 
-	log.Println("✅ Email sent successfully!")
+	log.Println("✅ Insufficient Email sent successfully!")
 	return nil
 }
 
 func SendShippedEmail(od OrderService.OrderResponse, ud *UserService.UserDetails) error {
+	fmt.Println(ud.Cust_Email)
 	from := "challengingperson97@gmail.com"
 	password := os.Getenv("EMAIL_PASSWORD")
-	to := []string{ud.Cust_Email}
+	to := []string{"challengingperon97@example.com"}
 
 	smtpHost := "smtp.gmail.com"
 	smtpPort := "587"
