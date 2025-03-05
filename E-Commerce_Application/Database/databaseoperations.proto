@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package Database;
+option go_package = "Database/files";
+
+service DatabaseService {
+  rpc CheckLoginCredentials (LoginRequest) returns (Empty);
+  rpc LoadLoginCred (LoginCredRequest) returns (Empty);
+  rpc GetAllLoginCred (Empty) returns (LoginCredList);
+  rpc GetAllUserData (Empty) returns (UserDetailsList);
+  rpc GetUserByUserDetails (UserRequest) returns (UserDetails);
+}
+
+message Empty {}
+
+message LoginRequest {
+  string username = 1;
+}
+
+
+
+message LoginCredRequest {
+  string username = 1;
+  string password = 2;
+}
+
+
+message LoginCred {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginCredList {
+  repeated LoginCred credentials = 1;
+}
+
+message UserRequest {
+  string username = 1;
+}
+
+message UserDetails {
+ int32   Cust_Id=1;    
+ string	Cust_Name=2; 
+ string	Cust_Email=3;
+ string	Cust_PNum=4; 
+ float Cust_Bal=5; 
+ string	UserName=6;  
+}
+
+message UserDetailsList {
+  repeated UserDetails users = 1;
+}
+

@@ -1,5 +1,9 @@
 package ProductService
 
+import (
+	lg "module/logger"
+)
+
 type Product struct {
 	ProductID   string  `json:"product_id"`
 	Name        string  `json:"name"`
@@ -14,6 +18,7 @@ type Product struct {
 var Inventory []Product
 
 func LoadProducts() {
+	lg.Log.Info("Entered Load Products function")
 	products := []Product{
 		{"P12345", "Wireless Mouse", "Ergonomic wireless mouse with adjustable DPI.", "Electronics", "Computer Accessories", "Logitech", 29.99, 150},
 		{"P12346", "Bluetooth Headphones", "Over-ear Bluetooth headphones with noise cancellation.", "Electronics", "Audio", "Sony", 99.99, 75},
@@ -72,4 +77,6 @@ func LoadProducts() {
 	for _, k := range products {
 		Inventory = append(Inventory, k)
 	}
+
+	lg.Log.Info("Products loaded successfully in the Inventory List")
 }

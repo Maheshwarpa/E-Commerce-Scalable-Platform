@@ -5,6 +5,7 @@ import (
 	"log"
 	"module/OrderService"
 	"module/UserService"
+	lg "module/logger"
 	"net/smtp"
 	"os"
 	"strconv"
@@ -65,6 +66,7 @@ func SendFailEmail() {
 }
 
 func SendOrderConfirmationEmail(od OrderService.OrderResponse, ud *UserService.UserDetails) error {
+	lg.Log.Info("Sending order confirmation email")
 	fmt.Println(ud.Cust_Email)
 	from := "challengingperson97@gmail.com"
 	password := os.Getenv("EMAIL_PASSWORD")
@@ -98,12 +100,13 @@ func SendOrderConfirmationEmail(od OrderService.OrderResponse, ud *UserService.U
 		log.Fatal(err)
 		return err
 	}
-
+	lg.Log.Info("✅ Order confirmation email sent successfully!")
 	log.Println("✅ Order confirmation email sent successfully!")
 	return nil
 }
 
 func SendInsufficientMail(od OrderService.OrderResponse, ud *UserService.UserDetails) error {
+	lg.Log.Info("Sending insufficient Email")
 	fmt.Println(ud.Cust_Email)
 	from := "challengingperson97@gmail.com"
 	password := os.Getenv("EMAIL_PASSWORD")
@@ -128,12 +131,13 @@ func SendInsufficientMail(od OrderService.OrderResponse, ud *UserService.UserDet
 		log.Fatal(err)
 		return err
 	}
-
+	lg.Log.Info("✅ Insufficient Email sent successfully!")
 	log.Println("✅ Insufficient Email sent successfully!")
 	return nil
 }
 
 func SendShippedEmail(od OrderService.OrderResponse, ud *UserService.UserDetails) error {
+	lg.Log.Info("Sending shipment email !!!")
 	fmt.Println(ud.Cust_Email)
 	from := "challengingperson97@gmail.com"
 	password := os.Getenv("EMAIL_PASSWORD")
@@ -165,7 +169,7 @@ func SendShippedEmail(od OrderService.OrderResponse, ud *UserService.UserDetails
 		log.Fatal(err)
 		return err
 	}
-
+	lg.Log.Info("✅ Shipping email sent successfully!")
 	log.Println("✅ Shipping email sent successfully!")
 	return nil
 }

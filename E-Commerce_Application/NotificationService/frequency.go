@@ -5,12 +5,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	"module/ProductService"
+	"module/OrderService"
 
 	"github.com/redis/go-redis/v9"
 )
 
-var ProdMsg []ProductService.Product
+var ProdMsg []OrderService.FinalOrder
 
 //var ids string
 
@@ -19,13 +19,13 @@ type NotificationResponse struct {
 	Message string `json:"message"`
 }
 
-func GetMostAccessedProducts(ps []ProductService.Product) (string, error) {
+func GetMostAccessedProducts(ps []OrderService.FinalOrder) (string, error) {
 	//fmt.Println("Notification is being called")
 
 	for _, k := range ps {
 		var cnt = 0
 		for _, l := range ps {
-			if k.ProductID == l.ProductID {
+			if k.OrderDts.Product_Id == l.OrderDts.Product_Id {
 				cnt++
 			}
 		}
@@ -50,7 +50,7 @@ func GetMostAccessedProducts(ps []ProductService.Product) (string, error) {
 
 	//notification := "New message from Alice!"
 	for _, k := range ProdMsg {
-		user_id = k.ProductID
+		user_id = k.OrderDts.Product_Id
 		mess, err1 := json.Marshal(k)
 		if err1 != nil {
 			log.Fatalf("Error storing notification: %v", err1)
