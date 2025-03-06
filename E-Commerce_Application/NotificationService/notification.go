@@ -70,7 +70,7 @@ func SendOrderConfirmationEmail(od OrderService.OrderResponse, ud *UserService.U
 	fmt.Println(ud.Cust_Email)
 	from := "challengingperson97@gmail.com"
 	password := os.Getenv("EMAIL_PASSWORD")
-	to := []string{"challengingperon97@example.com"}
+	to := []string{ud.Cust_Email}
 
 	smtpHost := "smtp.gmail.com"
 	smtpPort := "587"
@@ -110,7 +110,7 @@ func SendInsufficientMail(od OrderService.OrderResponse, ud *UserService.UserDet
 	fmt.Println(ud.Cust_Email)
 	from := "challengingperson97@gmail.com"
 	password := os.Getenv("EMAIL_PASSWORD")
-	to := []string{"challengingperson97@gmail.com"}
+	to := []string{ud.Cust_Email}
 
 	smtpHost := "smtp.gmail.com"
 	smtpPort := "587"
@@ -141,7 +141,7 @@ func SendShippedEmail(od OrderService.OrderResponse, ud *UserService.UserDetails
 	fmt.Println(ud.Cust_Email)
 	from := "challengingperson97@gmail.com"
 	password := os.Getenv("EMAIL_PASSWORD")
-	to := []string{"challengingperon97@example.com"}
+	to := []string{ud.Cust_Email}
 
 	smtpHost := "smtp.gmail.com"
 	smtpPort := "587"
