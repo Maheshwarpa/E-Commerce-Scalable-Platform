@@ -10,6 +10,7 @@ import (
 	"module/Database"
 	"module/Database/files"
 	"module/OrderService"
+	"module/ProductService"
 	"module/Publisher"
 	"module/UserService"
 	lg "module/logger"
@@ -181,7 +182,7 @@ func userlogin(b *gin.Context) {
 				b.JSON(http.StatusInternalServerError, gin.H{"error": "Could not generate token"})
 				return
 			}
-			//UserService.StoreVault(token, k)
+			UserService.StoreVault(token, k)
 
 			sd, err1 := Database.GetUserByUserDeatils(k.UserName)
 			fmt.Println(sd)
@@ -302,7 +303,7 @@ func saveItem(b *gin.Context) {
 		fmt.Println("owp is", owp)
 		if (owp == OrderService.OrderWithPay{}) {
 			lg.Log.Error("error : Invalid JSON data")
-			b.JSON(http.StatusBadRequest, gin.H{"error": "Invalid JSON Data, Please provide the input in proper format"})
+			b.JSON(http.StatusBadRequest, gin.H{"error": "Invalid JSON Data, Please provide the input in proper format", "Balance is: ": Database.SampleData.Cust_Bal, "message": "Please Provide your card details to place your order and process further "})
 			return
 		}
 	}
@@ -430,17 +431,66 @@ func getUniqueCategory(b *gin.Context) {
 }
 
 func getOrderByStatus(b *gin.Context) {
+	lg.Log.Info("Searching the Orders based on the Status")
+	status := b.Param("status")
+	if status == "SUCCESS" || status == "FAILURE" {
+		k, err := Cassandra.GetOrdersByStatus(status)
+		if err != nil {
+			b.JSON(http.StatusNoContent, gin.H{"error": err})
+			return
+		}
+		b.JSON(http.StatusAccepted, k)
+	} else {
+		b.JSON(http.StatusNotFound, gin.H{"error": "Invalid status parameter"})
+	}
 
 }
 
 func getOrderByDate(b *gin.Context) {
+	lg.Log.Info("Searching the Orders based on the Date")
+	date := b.Param("date")
+
+	k, err := Cassandra.GetOrdersByDate(date)
+	if err != nil {
+		b.JSON(http.StatusNoContent, gin.H{"error": err})
+		return
+	}
+	b.JSON(http.StatusAccepted, k)
 
 }
 
 func getOrderByProductId(b *gin.Context) {
+	lg.Log.Info("Searching the Orders based on the ProductId")
+	pid := b.Param("product")
+	flag := false
+	lg.Log.Info("Product_Id is: ", pid)
+	for _, lk := range ProductService.Inventory {
+		if lk.ProductID == pid {
+			flag = true
+		}
+	}
+	if flag {
+		k, err := Cassandra.GetOrdersByProductId(pid)
+		if err != nil {
+			b.JSON(http.StatusNoContent, gin.H{"error": err})
+			return
+		}
+		b.JSON(http.StatusAccepted, k)
+	} else {
+		b.JSON(http.StatusNotFound, gin.H{"error": "Invalid product_id parameter"})
+	}
 
 }
 
 func getAllFinalOrders(b *gin.Context) {
+
+	lg.Log.Info("Entered the get all orders placed function post request call")
+	list, err := Cassandra.GetALLOrdersList()
+	if err != nil {
+		lg.Log.Error("error : Unable to fetch the order details")
+		b.JSON(http.StatusBadRequest, gin.H{"error": err})
+	}
+
+	b.JSON(http.StatusOK, list)
 
 }

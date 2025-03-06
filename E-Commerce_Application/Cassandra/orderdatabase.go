@@ -13,6 +13,48 @@ var Session *gocql.Session
 
 func ConnectCDB() {
 	lg.Log.Info("Creating Cassandra database connection!!")
+
+	// Connect to the Cassandra cluster (without specifying the keyspace initially)
+	cluster := gocql.NewCluster("localhost") // replace with your Cassandra IP
+	cluster.Port = 9042
+	cluster.Consistency = gocql.Quorum
+
+	// Create session (without specifying the keyspace)
+	session, err := cluster.CreateSession()
+	if err != nil {
+		log.Fatal(err)
+	}
+	Session = session
+
+	// Create the keyspace 'mykeyspace' if it doesn't exist
+	createKeyspaceQuery := `
+		CREATE KEYSPACE IF NOT EXISTS mykeyspace 
+		WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+	`
+	err = Session.Query(createKeyspaceQuery).Exec()
+	if err != nil {
+		log.Fatalf("Error creating keyspace: %v", err)
+	}
+	lg.Log.Info("Keyspace 'mykeyspace' created or already exists ✅")
+
+	// Close the session that doesn't have the keyspace
+	Session.Close()
+
+	// Now, create a new session with the 'mykeyspace' specified
+	cluster.Keyspace = "mykeyspace"
+	session, err = cluster.CreateSession() // Re-create session with the keyspace specified
+	if err != nil {
+		log.Fatalf("Error creating session with keyspace: %v", err)
+	}
+
+	Session = session
+
+	lg.Log.Info("Cassandra DB connected with 'mykeyspace' ✅")
+	fmt.Println("Cassandra DB connected with 'mykeyspace' ✅")
+}
+
+func ConnectCDBd() {
+	lg.Log.Info("Creating Cassandra database connection!!")
 	// Connect to the Cassandra cluster (without specifying the keyspace initially)
 	cluster := gocql.NewCluster("localhost") // replace with your Cassandra IP
 	cluster.Port = 9042
@@ -160,7 +202,7 @@ func AddFinalOrder(session *gocql.Session, order OrderService.FinalOrder) error 
 func GetOrdersByProductId(productId string) ([]OrderService.FinalOrder, error) {
 	lg.Log.Info("Fetching orders by product_id from the finalorder table!!")
 
-	query := `SELECT order_id, product_id, count, order_date, order_status FROM finalorder WHERE product_id = ?`
+	query := `SELECT order_id, product_id, count, order_date, order_status FROM finalorder WHERE product_id = ?ALLOW FILTERING`
 	iter := Session.Query(query, productId).Iter()
 
 	var orders []OrderService.FinalOrder
@@ -182,7 +224,7 @@ func GetOrdersByProductId(productId string) ([]OrderService.FinalOrder, error) {
 func GetOrdersByDate(orderDate string) ([]OrderService.FinalOrder, error) {
 	lg.Log.Info("Fetching orders by order_date from the finalorder table!!")
 
-	query := `SELECT order_id, product_id, count, order_date, order_status FROM finalorder WHERE order_date = ?`
+	query := `SELECT order_id, product_id, count, order_date, order_status FROM finalorder WHERE order_date = ?ALLOW FILTERING`
 	iter := Session.Query(query, orderDate).Iter()
 
 	var orders []OrderService.FinalOrder
@@ -204,7 +246,7 @@ func GetOrdersByDate(orderDate string) ([]OrderService.FinalOrder, error) {
 func GetOrdersByStatus(status string) ([]OrderService.FinalOrder, error) {
 	lg.Log.Info("Fetching orders by status from the finalorder table!!")
 
-	query := `SELECT order_id, product_id, count, order_date, order_status FROM finalorder WHERE order_status = ?`
+	query := `SELECT order_id, product_id, count, order_date, order_status FROM finalorder WHERE order_status = ?ALLOW FILTERING`
 	iter := Session.Query(query, status).Iter()
 
 	var orders []OrderService.FinalOrder
@@ -220,5 +262,27 @@ func GetOrdersByStatus(status string) ([]OrderService.FinalOrder, error) {
 	}
 
 	lg.Log.Info("Successfully fetched orders by status ✅")
+	return orders, nil
+}
+
+func GetALLOrdersList() ([]OrderService.FinalOrder, error) {
+	lg.Log.Info("Fetching orders by status from the finalorder table!!")
+
+	query := `SELECT order_id, product_id, count, order_date, order_status FROM finalorder`
+	iter := Session.Query(query).Iter()
+
+	var orders []OrderService.FinalOrder
+	var order OrderService.FinalOrder
+
+	for iter.Scan(&order.OrderId, &order.OrderDts.Product_Id, &order.OrderDts.Count, &order.OrderDte, &order.OrderStatus) {
+		orders = append(orders, order)
+	}
+
+	if err := iter.Close(); err != nil {
+		lg.Log.Error("Error fetching orders placed:", err)
+		return nil, fmt.Errorf("error fetching orders placed: %v", err)
+	}
+
+	lg.Log.Info("Successfully fetched orders list ✅")
 	return orders, nil
 }
