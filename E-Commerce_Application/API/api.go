@@ -82,11 +82,14 @@ func StartServer() {
 	//otected.GET("/dashboard", protectedRoute)
 
 	protected.POST("/Orders", saveItem)
+
 	protected.GET("/Products", getProducts)
 	protected.GET("/Products/category/:category", getCategory)
 	protected.GET("/Products/uniquecategory", getUniqueCategory)
 	protected.GET("/Products/brand/:brand", getBrand)
 	protected.GET("/Products/uniquebrand", getUniqueBrand)
+	protected.GET("/Products/:productid", getProductByID)
+
 	protected.GET("/Orders/status/:status", getOrderByStatus)
 	protected.GET("/Orders/date/:date", getOrderByDate)
 	protected.GET("/Orders/productid/:product", getOrderByProductId)
@@ -371,7 +374,7 @@ func saveItem(b *gin.Context) {
 
 func getProducts(b *gin.Context) {
 	lg.Log.Info("entered the get products function post request call")
-	k, err := Database.GetAllProdData(Database.DbPool)
+	k, err := Database.GetAllProdData()
 	if err != nil {
 		lg.Log.Error("error : Unable to fetch all product data")
 		b.JSON(http.StatusBadRequest, gin.H{"error": "Unable to fetch all product data"})
@@ -457,6 +460,18 @@ func getOrderByDate(b *gin.Context) {
 	}
 	b.JSON(http.StatusAccepted, k)
 
+}
+
+func getProductByID(b *gin.Context) {
+	lg.Log.Info("Searching the Products based on the ProductID")
+	pid := b.Param("productid")
+
+	k, err := Database.GetProductByProductId(pid)
+	if err != nil {
+		b.JSON(http.StatusNoContent, gin.H{"error": err})
+		return
+	}
+	b.JSON(http.StatusAccepted, k)
 }
 
 func getOrderByProductId(b *gin.Context) {

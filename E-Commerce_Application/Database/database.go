@@ -449,11 +449,29 @@ func GetUserByUserDeatils(str string) (UserService.UserDetails, error) {
 	return p, nil
 }
 
-func GetAllProdData(Dbpool *pgxpool.Pool) ([]ps.Product, error) {
+func GetProductByProductId(str string) (ps.Product, error) {
+	lg.Log.Info("GetProductByProductId function is called with ProductID:", str)
+
+	selectQuery := `SELECT * FROM product WHERE product_id = $1`
+	row := DbPool.QueryRow(context.Background(), selectQuery, str)
+
+	var p ps.Product
+	err := row.Scan(&p.ProductID, &p.Name, &p.Description, &p.Category, &p.Subcategory, &p.Brand, &p.Price, &p.Quantity)
+	if err != nil {
+		lg.Log.Error("Failed to fetch product by ProductID %v: %v", str, err)
+		log.Printf("Failed to fetch product by ProductID %v: %v", str, err)
+		return ps.Product{}, err
+	}
+
+	return p, nil
+
+}
+
+func GetAllProdData() ([]ps.Product, error) {
 	lg.Log.Info("Get all products data function is called !!")
 	selectQuery := `SELECT * from product`
 
-	rows, err := Dbpool.Query(context.Background(), selectQuery)
+	rows, err := DbPool.Query(context.Background(), selectQuery)
 	if err != nil {
 		lg.Log.Error("Failed to fetch product from GetALLProdData function %v\n", err)
 		log.Printf("Failed to fetch product from GetALLProdData function %v\n", err)

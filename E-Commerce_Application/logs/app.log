@@ -5834,3 +5834,429 @@
 {"level":"info","msg":"Outside of claim messageorders","time":"2025-03-06T15:26:42-07:00"}
 {"level":"info","msg":"Go ROutine main has joined******************","time":"2025-03-06T15:26:42-07:00"}
 {"level":"info","msg":"********************************************************************\n\n\n\n","time":"2025-03-06T15:26:42-07:00"}
+{"level":"info","msg":"Connecting to the Postgresql database","time":"2025-03-07T10:29:35-07:00"}
+{"level":"info","msg":"Entered Connect DB Function","time":"2025-03-07T10:29:35-07:00"}
+{"level":"info","msg":"Postgresql DB ✅","time":"2025-03-07T10:29:35-07:00"}
+{"level":"info","msg":"Successfully Connected to the Postgresql Database","time":"2025-03-07T10:29:35-07:00"}
+{"level":"info","msg":"Assigned dbpool value to the global variable","time":"2025-03-07T10:29:35-07:00"}
+{"level":"info","msg":"Connecting to the Product table in  database","time":"2025-03-07T10:29:35-07:00"}
+{"level":"info","msg":"Entered create product table function","time":"2025-03-07T10:29:35-07:00"}
+{"level":"info","msg":"Product Table ✅","time":"2025-03-07T10:29:35-07:00"}
+{"level":"info","msg":"Successfully Connected to the Product table in  database","time":"2025-03-07T10:29:35-07:00"}
+{"level":"info","msg":"Loading products to the Products table in database","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Entered Load Products function","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Products loaded successfully in the Inventory List","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Loading product data !!!","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12345","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12346","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12347","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12348","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12349","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12350","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12351","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12352","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12353","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12354","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12355","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12356","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12357","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12358","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12359","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12360","time":"2025-03-07T10:29:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12361","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12362","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12363","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12364","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12365","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12366","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12367","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12368","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12369","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12370","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12371","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12372","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12373","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12374","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12375","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12376","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12377","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12378","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12379","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12380","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12381","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12382","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12383","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12384","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12385","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12386","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12387","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12388","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12389","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12390","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12391","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12392","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12393","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12394","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12395","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12396","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Successfully Loaded !!!","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Creating the User table in database","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Creating user table !","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"User Table Created Successfully !!","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Creating login table in database","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Creating login table !","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"LoginCRedential ✅","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Creating a connection to cassandra database","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Creating Cassandra database connection!!","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Keyspace 'mykeyspace' created or already exists ✅","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Cassandra DB connected with 'mykeyspace' ✅","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Creating order table in cassandra database","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Creating Order table in cassandra database !!","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Order Table ✅","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Creating final order table in cassandra database","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Creating FinalOrder table in Cassandra database!!","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"FinalOrder Table ✅","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Starting GRPC Server as a Go Routinue","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Create a listener on port 50051","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"gRPC server started on port 50051","time":"2025-03-07T10:29:39-07:00"}
+{"level":"info","msg":"Application Started Here !","time":"2025-03-07T10:29:42-07:00"}
+{"level":"info","msg":"Connecting to 8080 port through RESTAPI","time":"2025-03-07T10:29:51-07:00"}
+{"level":"info","msg":"Starting API Server at port 8080","time":"2025-03-07T10:29:51-07:00"}
+{"level":"info","msg":"Connect to the gRPC server","time":"2025-03-07T10:29:51-07:00"}
+{"level":"info","msg":"Enetered User login request !!","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"Checking login credentials for username: %scustMah1","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"Checking login credentials !!!","time":"2025-03-07T10:30:12-07:00"}
+{"level":"error","msg":"exists","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"Fetching all login credentials","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"Entered GetAllLogin cred function","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"Fetching all user details","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"Entered getall user data function !!","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"Cred is :{custMah1 1111}","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"List is [{custMah1 1111}]","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"Entered Store Vault Section !!","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"Login details is :{custMah1 1111}","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"Get user details by username !!","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"**************************************************************\n","time":"2025-03-07T10:30:12-07:00"}
+{"level":"info","msg":"entered the get products function post request call","time":"2025-03-07T10:30:33-07:00"}
+{"level":"info","msg":"Get all products data function is called !!","time":"2025-03-07T10:30:33-07:00"}
+{"level":"info","msg":"Entered SaveItem function !!","time":"2025-03-07T10:30:59-07:00"}
+{"level":"info","msg":"Initializing kafka producer","time":"2025-03-07T10:30:59-07:00"}
+{"level":"info","msg":"kafka producer has been initialized Successfully","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Entered check valid product function !!","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Entered Addorderlist function","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Entered the validate order function","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Valid Order !!","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Entered getstock status function","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Stock is available !!","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Updating product table after completion...","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Product quantity updated successfully for product_id:P12345","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Order has been added to the list","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Started creating an order !","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Complete order has been created Successfully !","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Adding order to cassandra database !!","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Before Add: WaitGroup count: %d\n{{} {{} {} 0} 0}","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"After Add: WaitGroup count: %d\n{{} {{} {} 4294967296} 0}","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Entered kafka producer","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Entered ConsumerMessagesorders","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Message sent to topic %s (partition %d, offset %d)\norders0 1","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Entered the close kafka producer function !!","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Producer is closed","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Producer sent an order message.","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"*******************Waiting for Go ROutine main to join","time":"2025-03-07T10:31:00-07:00"}
+{"level":"info","msg":"Entered  ConsumeClaim Sectionorders","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Entered process message function","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Entered Orders","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Processing Order:O1P12345","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Entered CheckEligibility Function","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Entered the calculate total function !","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Entered the get product price function !!!","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Total is :29.99","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Entered get user balance function !!","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Total is :29.99","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"User Balance is :1206.01","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Card Number is :","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Card Flag is :false","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"After Deduction Balance :1176.02","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Updating the user balance","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"User is eligible !!!","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Initializing kafka producer","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Before Done: WaitGroup count: %d\n\u0026{{} {{} {} 4294967297} 0}","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"After Done: WaitGroup count: %d\n\u0026{{} {{} {} 4294967297} 0}","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Entered ConsumerMessagespayment","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"kafka producer has been initialized Successfully","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Entered kafka producer","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Message sent to topic %s (partition %d, offset %d)\npayment0 1","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Entered the close kafka producer function !!","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Producer is closed","time":"2025-03-07T10:31:03-07:00"}
+{"level":"info","msg":"Entered  ConsumeClaim Sectionpayment","time":"2025-03-07T10:31:06-07:00"}
+{"level":"info","msg":"Entered process message function","time":"2025-03-07T10:31:06-07:00"}
+{"level":"info","msg":"Entered Payments","time":"2025-03-07T10:31:06-07:00"}
+{"level":"info","msg":"Adding order to the finalorder table in Cassandra database!!","time":"2025-03-07T10:31:06-07:00"}
+{"level":"info","msg":"Order added successfully to FinalOrder Table ✅","time":"2025-03-07T10:31:06-07:00"}
+{"level":"info","msg":"Sending order confirmation email","time":"2025-03-07T10:31:06-07:00"}
+{"level":"info","msg":"Entered the calculate total function !","time":"2025-03-07T10:31:06-07:00"}
+{"level":"info","msg":"Entered the get product price function !!!","time":"2025-03-07T10:31:06-07:00"}
+{"level":"info","msg":"Total is :29.99","time":"2025-03-07T10:31:06-07:00"}
+{"level":"info","msg":"✅ Order confirmation email sent successfully!","time":"2025-03-07T10:31:10-07:00"}
+{"level":"info","msg":"Sending shipment email !!!","time":"2025-03-07T10:31:10-07:00"}
+{"level":"info","msg":"✅ Shipping email sent successfully!","time":"2025-03-07T10:31:13-07:00"}
+{"level":"info","msg":"Processing Payment for Order:O1P12345","time":"2025-03-07T10:31:13-07:00"}
+{"level":"info","msg":"Before Done C-Claim: WaitGroup count: %d\n\u0026{{} {{} {} 4294967298} 0}","time":"2025-03-07T10:31:13-07:00"}
+{"level":"info","msg":"After Done C-Claim: WaitGroup count: %d\n\u0026{{} {{} {} 4294967298} 0}","time":"2025-03-07T10:31:13-07:00"}
+{"level":"info","msg":"Outside of claim messagepayment","time":"2025-03-07T10:31:13-07:00"}
+{"level":"info","msg":"Before Done C-Claim: WaitGroup count: %d\n\u0026{{} {{} {} 0} 1}","time":"2025-03-07T10:31:13-07:00"}
+{"level":"info","msg":"After Done C-Claim: WaitGroup count: %d\n\u0026{{} {{} {} 0} 1}","time":"2025-03-07T10:31:13-07:00"}
+{"level":"info","msg":"Outside of claim messageorders","time":"2025-03-07T10:31:13-07:00"}
+{"level":"info","msg":"Go ROutine main has joined******************","time":"2025-03-07T10:31:13-07:00"}
+{"level":"info","msg":"********************************************************************\n\n\n\n","time":"2025-03-07T10:31:13-07:00"}
+{"level":"info","msg":"entered the get products function post request call","time":"2025-03-07T10:31:44-07:00"}
+{"level":"info","msg":"Get all products data function is called !!","time":"2025-03-07T10:31:44-07:00"}
+{"level":"info","msg":"Connecting to the Postgresql database","time":"2025-03-07T10:40:35-07:00"}
+{"level":"info","msg":"Entered Connect DB Function","time":"2025-03-07T10:40:35-07:00"}
+{"level":"info","msg":"Postgresql DB ✅","time":"2025-03-07T10:40:35-07:00"}
+{"level":"info","msg":"Successfully Connected to the Postgresql Database","time":"2025-03-07T10:40:35-07:00"}
+{"level":"info","msg":"Assigned dbpool value to the global variable","time":"2025-03-07T10:40:35-07:00"}
+{"level":"info","msg":"Connecting to the Product table in  database","time":"2025-03-07T10:40:35-07:00"}
+{"level":"info","msg":"Entered create product table function","time":"2025-03-07T10:40:35-07:00"}
+{"level":"info","msg":"Product Table ✅","time":"2025-03-07T10:40:35-07:00"}
+{"level":"info","msg":"Successfully Connected to the Product table in  database","time":"2025-03-07T10:40:35-07:00"}
+{"level":"info","msg":"Loading products to the Products table in database","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Entered Load Products function","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Products loaded successfully in the Inventory List","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Loading product data !!!","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12345","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12346","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12347","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12348","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12349","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12350","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12351","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12352","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12353","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12354","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12355","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12356","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12357","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12358","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12359","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12360","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12361","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12362","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12363","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12364","time":"2025-03-07T10:40:38-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12365","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12366","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12367","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12368","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12369","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12370","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12371","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12372","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12373","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12374","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12375","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12376","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12377","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12378","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12379","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12380","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12381","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12382","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12383","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12384","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12385","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12386","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12387","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12388","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12389","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12390","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12391","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12392","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12393","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12394","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12395","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully inserted product %s\nP12396","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Successfully Loaded !!!","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Creating the User table in database","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Creating user table !","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"User Table Created Successfully !!","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Creating login table in database","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Creating login table !","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"LoginCRedential ✅","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Creating a connection to cassandra database","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Creating Cassandra database connection!!","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Keyspace 'mykeyspace' created or already exists ✅","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Cassandra DB connected with 'mykeyspace' ✅","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Creating order table in cassandra database","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Creating Order table in cassandra database !!","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Order Table ✅","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Creating final order table in cassandra database","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Creating FinalOrder table in Cassandra database!!","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"FinalOrder Table ✅","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Starting GRPC Server as a Go Routinue","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Create a listener on port 50051","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"gRPC server started on port 50051","time":"2025-03-07T10:40:39-07:00"}
+{"level":"info","msg":"Application Started Here !","time":"2025-03-07T10:40:42-07:00"}
+{"level":"info","msg":"Connecting to 8080 port through RESTAPI","time":"2025-03-07T10:41:23-07:00"}
+{"level":"info","msg":"Starting API Server at port 8080","time":"2025-03-07T10:41:23-07:00"}
+{"level":"info","msg":"Connect to the gRPC server","time":"2025-03-07T10:41:23-07:00"}
+{"level":"info","msg":"Enetered User login request !!","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"Checking login credentials for username: %scustMah1","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"Checking login credentials !!!","time":"2025-03-07T10:41:41-07:00"}
+{"level":"error","msg":"exists","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"Fetching all login credentials","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"Entered GetAllLogin cred function","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"Fetching all user details","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"Entered getall user data function !!","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"Cred is :{custMah1 1111}","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"List is [{custMah1 1111}]","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"Entered Store Vault Section !!","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"Login details is :{custMah1 1111}","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"Get user details by username !!","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"**************************************************************\n","time":"2025-03-07T10:41:41-07:00"}
+{"level":"info","msg":"entered the get products function post request call","time":"2025-03-07T10:42:18-07:00"}
+{"level":"info","msg":"Get all products data function is called !!","time":"2025-03-07T10:42:18-07:00"}
+{"level":"info","msg":"Entered SaveItem function !!","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Initializing kafka producer","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"kafka producer has been initialized Successfully","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Entered check valid product function !!","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Entered Addorderlist function","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Entered the validate order function","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Valid Order !!","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Entered getstock status function","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Stock is available !!","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Updating product table after completion...","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Product quantity updated successfully for product_id:P12345","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Order has been added to the list","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Started creating an order !","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Complete order has been created Successfully !","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Adding order to cassandra database !!","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Before Add: WaitGroup count: %d\n{{} {{} {} 0} 0}","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"After Add: WaitGroup count: %d\n{{} {{} {} 4294967296} 0}","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Entered kafka producer","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Entered ConsumerMessagesorders","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Message sent to topic %s (partition %d, offset %d)\norders0 2","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Entered the close kafka producer function !!","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Producer is closed","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Producer sent an order message.","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"*******************Waiting for Go ROutine main to join","time":"2025-03-07T10:42:35-07:00"}
+{"level":"info","msg":"Entered  ConsumeClaim Sectionorders","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"Entered process message function","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"Entered Orders","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"Processing Order:O1P12345","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"Entered CheckEligibility Function","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"Entered the calculate total function !","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"Entered the get product price function !!!","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"Total is :29.99","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"Entered get user balance function !!","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"Total is :29.99","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"User Balance is :1176.02","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"Card Number is :","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"Card Flag is :false","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"After Deduction Balance :1146.03","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"Updating the user balance","time":"2025-03-07T10:42:38-07:00"}
+{"level":"info","msg":"User is eligible !!!","time":"2025-03-07T10:42:39-07:00"}
+{"level":"info","msg":"Initializing kafka producer","time":"2025-03-07T10:42:39-07:00"}
+{"level":"info","msg":"Before Done: WaitGroup count: %d\n\u0026{{} {{} {} 4294967297} 0}","time":"2025-03-07T10:42:39-07:00"}
+{"level":"info","msg":"After Done: WaitGroup count: %d\n\u0026{{} {{} {} 4294967297} 0}","time":"2025-03-07T10:42:39-07:00"}
+{"level":"info","msg":"Entered ConsumerMessagespayment","time":"2025-03-07T10:42:39-07:00"}
+{"level":"info","msg":"kafka producer has been initialized Successfully","time":"2025-03-07T10:42:39-07:00"}
+{"level":"info","msg":"Entered kafka producer","time":"2025-03-07T10:42:39-07:00"}
+{"level":"info","msg":"Message sent to topic %s (partition %d, offset %d)\npayment0 2","time":"2025-03-07T10:42:39-07:00"}
+{"level":"info","msg":"Entered the close kafka producer function !!","time":"2025-03-07T10:42:39-07:00"}
+{"level":"info","msg":"Producer is closed","time":"2025-03-07T10:42:39-07:00"}
+{"level":"info","msg":"Entered  ConsumeClaim Sectionpayment","time":"2025-03-07T10:42:41-07:00"}
+{"level":"info","msg":"Entered process message function","time":"2025-03-07T10:42:42-07:00"}
+{"level":"info","msg":"Entered Payments","time":"2025-03-07T10:42:42-07:00"}
+{"level":"info","msg":"Adding order to the finalorder table in Cassandra database!!","time":"2025-03-07T10:42:42-07:00"}
+{"level":"info","msg":"Order added successfully to FinalOrder Table ✅","time":"2025-03-07T10:42:42-07:00"}
+{"level":"info","msg":"Sending order confirmation email","time":"2025-03-07T10:42:42-07:00"}
+{"level":"info","msg":"Entered the calculate total function !","time":"2025-03-07T10:42:42-07:00"}
+{"level":"info","msg":"Entered the get product price function !!!","time":"2025-03-07T10:42:42-07:00"}
+{"level":"info","msg":"Total is :29.99","time":"2025-03-07T10:42:42-07:00"}
+{"level":"info","msg":"✅ Order confirmation email sent successfully!","time":"2025-03-07T10:42:44-07:00"}
+{"level":"info","msg":"Sending shipment email !!!","time":"2025-03-07T10:42:44-07:00"}
+{"level":"info","msg":"✅ Shipping email sent successfully!","time":"2025-03-07T10:42:47-07:00"}
+{"level":"info","msg":"Processing Payment for Order:O1P12345","time":"2025-03-07T10:42:47-07:00"}
+{"level":"info","msg":"Before Done C-Claim: WaitGroup count: %d\n\u0026{{} {{} {} 4294967298} 0}","time":"2025-03-07T10:42:47-07:00"}
+{"level":"info","msg":"After Done C-Claim: WaitGroup count: %d\n\u0026{{} {{} {} 4294967298} 0}","time":"2025-03-07T10:42:47-07:00"}
+{"level":"info","msg":"Outside of claim messagepayment","time":"2025-03-07T10:42:47-07:00"}
+{"level":"info","msg":"Before Done C-Claim: WaitGroup count: %d\n\u0026{{} {{} {} 0} 1}","time":"2025-03-07T10:42:47-07:00"}
+{"level":"info","msg":"After Done C-Claim: WaitGroup count: %d\n\u0026{{} {{} {} 0} 1}","time":"2025-03-07T10:42:47-07:00"}
+{"level":"info","msg":"Outside of claim messageorders","time":"2025-03-07T10:42:47-07:00"}
+{"level":"info","msg":"Go ROutine main has joined******************","time":"2025-03-07T10:42:47-07:00"}
+{"level":"info","msg":"********************************************************************\n\n\n\n","time":"2025-03-07T10:42:47-07:00"}
+{"level":"info","msg":"Searching the Products based on the ProductID","time":"2025-03-07T10:43:40-07:00"}
+{"level":"info","msg":"GetProductByProductId function is called with ProductID:P12345","time":"2025-03-07T10:43:40-07:00"}
+{"level":"info","msg":"Entered SaveItem function !!","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Initializing kafka producer","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"kafka producer has been initialized Successfully","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Entered check valid product function !!","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Entered Addorderlist function","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Entered the validate order function","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Valid Order !!","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Entered getstock status function","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Stock is available !!","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Updating product table after completion...","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Product quantity updated successfully for product_id:P12345","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Order has been added to the list","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Started creating an order !","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Complete order has been created Successfully !","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Adding order to cassandra database !!","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Before Add: WaitGroup count: %d\n{{} {{} {} 0} 0}","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"After Add: WaitGroup count: %d\n{{} {{} {} 4294967296} 0}","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Entered kafka producer","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Entered ConsumerMessagesorders","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Message sent to topic %s (partition %d, offset %d)\norders0 3","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Entered the close kafka producer function !!","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Producer is closed","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Producer sent an order message.","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"*******************Waiting for Go ROutine main to join","time":"2025-03-07T10:45:37-07:00"}
+{"level":"info","msg":"Entered  ConsumeClaim Sectionorders","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Entered process message function","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Entered Orders","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Processing Order:O2P12345","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Entered CheckEligibility Function","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Entered the calculate total function !","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Entered the get product price function !!!","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Total is :269.90999999999997","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Entered get user balance function !!","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Total is :269.90999999999997","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"User Balance is :1146.03","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Card Number is :","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Card Flag is :false","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"After Deduction Balance :876.12","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Updating the user balance","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"User is eligible !!!","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Initializing kafka producer","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Before Done: WaitGroup count: %d\n\u0026{{} {{} {} 4294967297} 0}","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"After Done: WaitGroup count: %d\n\u0026{{} {{} {} 4294967297} 0}","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Entered ConsumerMessagespayment","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"kafka producer has been initialized Successfully","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Entered kafka producer","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Message sent to topic %s (partition %d, offset %d)\npayment0 3","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Entered the close kafka producer function !!","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Producer is closed","time":"2025-03-07T10:45:40-07:00"}
+{"level":"info","msg":"Entered  ConsumeClaim Sectionpayment","time":"2025-03-07T10:45:43-07:00"}
+{"level":"info","msg":"Entered process message function","time":"2025-03-07T10:45:43-07:00"}
+{"level":"info","msg":"Entered Payments","time":"2025-03-07T10:45:43-07:00"}
+{"level":"info","msg":"Adding order to the finalorder table in Cassandra database!!","time":"2025-03-07T10:45:43-07:00"}
+{"level":"info","msg":"Order added successfully to FinalOrder Table ✅","time":"2025-03-07T10:45:43-07:00"}
+{"level":"info","msg":"Sending order confirmation email","time":"2025-03-07T10:45:43-07:00"}
+{"level":"info","msg":"Entered the calculate total function !","time":"2025-03-07T10:45:43-07:00"}
+{"level":"info","msg":"Entered the get product price function !!!","time":"2025-03-07T10:45:43-07:00"}
+{"level":"info","msg":"Total is :269.90999999999997","time":"2025-03-07T10:45:43-07:00"}
+{"level":"info","msg":"✅ Order confirmation email sent successfully!","time":"2025-03-07T10:45:46-07:00"}
+{"level":"info","msg":"Sending shipment email !!!","time":"2025-03-07T10:45:46-07:00"}
+{"level":"info","msg":"✅ Shipping email sent successfully!","time":"2025-03-07T10:45:49-07:00"}
+{"level":"info","msg":"Processing Payment for Order:O2P12345","time":"2025-03-07T10:45:49-07:00"}
+{"level":"info","msg":"Before Done C-Claim: WaitGroup count: %d\n\u0026{{} {{} {} 4294967298} 0}","time":"2025-03-07T10:45:49-07:00"}
+{"level":"info","msg":"After Done C-Claim: WaitGroup count: %d\n\u0026{{} {{} {} 4294967298} 0}","time":"2025-03-07T10:45:49-07:00"}
+{"level":"info","msg":"Outside of claim messagepayment","time":"2025-03-07T10:45:49-07:00"}
+{"level":"info","msg":"Before Done C-Claim: WaitGroup count: %d\n\u0026{{} {{} {} 0} 1}","time":"2025-03-07T10:45:49-07:00"}
+{"level":"info","msg":"After Done C-Claim: WaitGroup count: %d\n\u0026{{} {{} {} 0} 1}","time":"2025-03-07T10:45:49-07:00"}
+{"level":"info","msg":"Outside of claim messageorders","time":"2025-03-07T10:45:49-07:00"}
+{"level":"info","msg":"Go ROutine main has joined******************","time":"2025-03-07T10:45:49-07:00"}
+{"level":"info","msg":"********************************************************************\n\n\n\n","time":"2025-03-07T10:45:49-07:00"}
+{"level":"info","msg":"Searching the Products based on the ProductID","time":"2025-03-07T10:46:06-07:00"}
+{"level":"info","msg":"GetProductByProductId function is called with ProductID:P12345","time":"2025-03-07T10:46:06-07:00"}

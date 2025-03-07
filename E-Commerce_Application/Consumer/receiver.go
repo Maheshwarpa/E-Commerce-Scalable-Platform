@@ -170,12 +170,12 @@ func processMessage(topic string, msg OrderService.OrderResponse, wg *sync.WaitG
 				log.Fatalf("Unable to load final order into the final order table %s", err12)
 				return
 			}
-			_, err23 := OrderService.UpdateStockInDb(order.PlacedOrder.Product_Id, order.PlacedOrder.Count, fo.OrderStatus)
+			/*_, err23 := OrderService.UpdateStockInDb(order.PlacedOrder.Product_Id, order.PlacedOrder.Count, fo.OrderStatus)
 			if err23 != nil {
 				lg.Log.Error("Unable to Update the Balance in Product Table %s", err23)
 				log.Fatalf("Unable to Update the Balance in Product Table %s", err23)
 				return
-			}
+			}*/
 			err2 := NotificationService.SendInsufficientMail(order, Database.SampleData)
 			if err2 != nil {
 				lg.Log.Error("Unable to send Insufficient Balance Email %s", err2)
@@ -205,13 +205,13 @@ func processMessage(topic string, msg OrderService.OrderResponse, wg *sync.WaitG
 			log.Fatalf("Unable to load final order into the final order table %s", err12)
 			return
 		}
-		_, err23 := OrderService.UpdateStockInDb(payment.PlacedOrder.Product_Id, payment.PlacedOrder.Count, fo.OrderStatus)
+		/*_, err23 := OrderService.UpdateStockInDb(payment.PlacedOrder.Product_Id, payment.PlacedOrder.Count, fo.OrderStatus)
 		if err23 != nil {
 			lg.Log.Error("Unable to Update the Balance in Product Table %s", err23)
 			log.Fatalf("Unable to Update the Balance in Product Table %s", err23)
 			return
 		}
-
+		*/
 		err3 := NotificationService.SendOrderConfirmationEmail(payment, Database.SampleData)
 		if err3 != nil {
 			lg.Log.Error("Unable to send Order Confirmation Email %s", err3)

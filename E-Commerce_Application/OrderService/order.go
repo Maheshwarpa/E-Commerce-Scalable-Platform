@@ -76,7 +76,15 @@ func GetStockStatus(Ord Order) bool {
 			ProductService.Inventory[ind].Quantity -= Ord.Count
 			if ProductService.Inventory[ind].Quantity > 0 {
 				lg.Log.Info("Stock is available !!")
+				_, err := Database.UpdateProdTbPostCompletion(k.ProductID, ProductService.Inventory[ind].Quantity)
+				if err != nil {
+					lg.Log.Info("Unable to update the value of the product quantity in product table")
+				}
 				return !flag
+			} else {
+				ProductService.Inventory[ind].Quantity += Ord.Count
+				lg.Log.Info("Stock is NOT available !!")
+				return flag
 			}
 		}
 	}
