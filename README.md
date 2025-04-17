@@ -4,6 +4,8 @@
 
 SKHT is an e-commerce platform that allows users to log in, browse products, and create accounts. The backend architecture involves several databases (PostgreSQL and Cassandra) for handling various types of data such as user information, product listings, and orders. The system also utilizes a REST API for user authentication and product management, with a GRPC server handling communication between services.
 
+qvmh uaqi ehqs vjnj
+
 ### Technology Stack
 
 - Backend: Go (Golang)
